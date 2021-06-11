@@ -1,0 +1,136 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+input {
+  border: none;
+}
+
+body {
+  background-color: bisque;
+}
+
+body header {
+  text-align: center;
+  height: 5vh;
+  background-color: grey;
+}
+
+body main {
+  height: 90vh;
+}
+
+body main #add-ctn {
+  max-width: 40%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+body main #add-ctn div {
+  font-weight: bold;
+}
+
+body main #add-ctn form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #add-ctn form input {
+  height: 45px;
+  margin: 20px 0;
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body main #add-ctn form button {
+  height: 45px;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  margin: 20px 0 20px 10px;
+}
+
+body main #lists-ctn {
+  max-width: 40%;
+  margin: auto;
+}
+
+body main #lists-ctn table {
+  width: 100%;
+}
+
+body main #lists-ctn table tr,
+body main #lists-ctn table td {
+  background-color: white;
+  padding: 10px;
+}
+
+body main #lists-ctn table input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
+body main #lists-ctn table .dropdown {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  position: relative;
+}
+
+body main #lists-ctn table .dropdown textarea {
+  height: 200px;
+}
+
+body main #lists-ctn table .dropdown input[type=date] {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+body main #lists-ctn table .dropdown input[type=button] {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+body footer {
+  height: 5vh;
+  background-color: grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer button {
+  width: 40%;
+  height: 60%;
+  text-align: left;
+  background-color: transparent;
+}
+
+.hide {
+  display: none !important;
+}
+/*# sourceMappingURL=style.css.map */

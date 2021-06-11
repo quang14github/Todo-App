@@ -1,0 +1,95 @@
+// All
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+input {
+  border: none;
+}
+// specify
+body {
+  background-color: bisque;
+  header {
+    text-align: center;
+    height: 5vh;
+    background-color: grey;
+  }
+  main {
+    height: 90vh;
+    #add-ctn {
+      max-width: 40%;
+      margin: auto;
+      padding-top: 20px;
+      div {
+        font-weight: bold;
+      }
+      form {
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        justify-content: center;
+        input {
+          height: 45px;
+          margin: 20px 0;
+          flex-basis: 70%;
+          flex-grow: 1;
+        }
+        button {
+          height: 45px;
+          flex-basis: 15%;
+          margin: 20px 0 20px 10px;
+       }
+      }
+    }
+    #lists-ctn {
+      max-width: 40%;
+      margin: auto;
+      table {
+        width: 100%;
+        tr,
+        td {
+          background-color: white;
+          padding: 10px;
+        }
+        input[type=checkbox] {
+          width: 20px;
+          height: 20px;
+        }
+        .dropdown {
+          margin-top: 20px;
+            display: flex;
+            flex-flow: wrap;
+            position: relative;
+          textarea {
+            height: 200px;
+          }
+          input[type=date] {
+            align-self: flex-start;
+            
+          }
+          input[type=button] {
+            align-self: flex-end;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    height: 5vh;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 40%;
+      height: 60%;
+      text-align: left;
+      background-color: transparent;
+    }
+  }
+}
+.hide {
+   display: none !important;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo app</title>
+</head>
+
+<body>
+    <header>My Todo Lists</header>
+    <main>
+        <section id="add-ctn">
+            <div>New Todo:</div>
+            <form>
+                <input id="task" type="text" required >
+                <button id="add-ctn-button" type="button">Add</button>
+            </form>
+        </section>
+        <section id="lists-ctn">
+            <table class="lists">
+                <tr class="list-ctn">
+                    <td>
+                        <input type="checkbox">
+                        <input type="text" value="Vacuum the carpet">
+                        <div class="dropdown hide">
+                            <textarea></textarea>
+                            <input type="date"> 
+                            <input type="button" value="Delete">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="list-ctn">
+                    <td>
+                        <input type="checkbox">
+                        <input type="text" value="Sweep">
+                        <div class="dropdown hide">
+                            <textarea></textarea>
+                            <input type="date">
+                            <input type="button" value="Delete"> 
+                        </div>
+                    </td>
+                </tr>
+                <tr class="list-ctn">
+                    <td>
+                        <input type="checkbox">
+                        <input type="text" value="Wash the dishes">
+                        <div class="dropdown">
+                            <textarea></textarea>
+                            <input type="date"> 
+                            <input type="button" value="Delete">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <button id="done" type="button">Done(0)</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
