@@ -3,7 +3,7 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-size: 20px;
+  font-family: monospace;
 }
 
 input {
@@ -11,63 +11,32 @@ input {
 }
 
 body {
-  background-color: bisque;
+  background-color: #48bbaf;
 }
 
 body header {
+  font-size: 2em;
+  font-family: 'Vast Shadow', cursive;
+  background: #1ca89c;
+  padding: 40px;
+  margin: 0;
+  color: #333;
   text-align: center;
-  height: 5vh;
-  background-color: grey;
+}
+
+body header .emphasis {
+  font-family: 'Vast Shadow', cursive;
+  font-size: 4em;
 }
 
 body main {
-  height: 90vh;
-}
-
-body main #add-ctn {
-  max-width: 40%;
-  margin: auto;
-  padding-top: 20px;
-}
-
-body main #add-ctn div {
-  font-weight: bold;
-}
-
-body main #add-ctn form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body main #add-ctn form input {
-  height: 45px;
-  margin: 20px 0;
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-body main #add-ctn form button {
-  height: 45px;
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
-  margin: 20px 0 20px 10px;
+  height: 60vh;
 }
 
 body main #lists-ctn {
   max-width: 40%;
   margin: auto;
+  margin-top: 10px;
 }
 
 body main #lists-ctn table {
@@ -76,58 +45,76 @@ body main #lists-ctn table {
 
 body main #lists-ctn table tr,
 body main #lists-ctn table td {
-  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#65d8cb), to(#72f4e9));
+  background: linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65d8cb', endColorstr='#72f4e9',GradientType=0 );
   padding: 10px;
 }
 
-body main #lists-ctn table input[type=checkbox] {
-  width: 20px;
-  height: 20px;
+body main #lists-ctn table .list-bar input[type="text"] {
+  background-color: transparent;
+  font-size: 1.5em;
+}
+
+body main #lists-ctn table .list-bar input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
 }
 
 body main #lists-ctn table .dropdown {
-  margin-top: 20px;
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-body main #lists-ctn table .dropdown textarea {
-  height: 200px;
-}
-
-body main #lists-ctn table .dropdown input[type=date] {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-
-body main #lists-ctn table .dropdown input[type=button] {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-body footer {
-  height: 5vh;
-  background-color: grey;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body footer button {
-  width: 40%;
-  height: 60%;
-  text-align: left;
+body main #lists-ctn table .dropdown input {
   background-color: transparent;
+  font-size: 1.3em;
+}
+
+body main #lists-ctn table .dropdown button {
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+body main #add-ctn {
+  max-width: 40%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+body main #add-ctn form input {
+  height: 55px;
+  margin: 10px 0;
+  width: 70%;
+  font-size: 1.5em;
+  text-indent: 15px;
+}
+
+body main #add-ctn form button {
+  width: 30%;
+  height: 55px;
+  font-size: 1.5em;
+  border: none;
+  background: #29F4E3;
+}
+
+body #done {
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  background-color: #13756D;
+  border: none;
+  font-size: 3em;
+  color: #aaa;
 }
 
 .hide {

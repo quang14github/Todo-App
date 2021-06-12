@@ -1,7 +1,6 @@
 const lists = document.querySelector(".lists");
 var listCtn = document.querySelectorAll(".list-ctn");
 const showDone = document.getElementById("done");
-
 // checked function
 function addChecked(x) {
     x.children[0].children[0].addEventListener("click", () => {
@@ -13,8 +12,8 @@ function addChecked(x) {
 
 // show details function
 function showDetails(x) {
-    x.addEventListener("click", () => {
-        x.children[0].lastElementChild.classList.toggle("hide");
+    x.children[2].addEventListener("click", () => {
+        x.lastElementChild.classList.toggle("hide");
     });
 }
 // Add list
@@ -25,6 +24,9 @@ document.getElementById("add-ctn-button").addEventListener("click", function () 
     newlist.innerHTML = `<td>
     <input type="checkbox">
     <input type="text" value="${task.value}">
+    <button type="button">
+    <img class="arrow" src="arrow-down.svg" alt="">
+</button>
     <div class="dropdown hide">
         <textarea></textarea>
         <input type="date"> 
@@ -32,7 +34,7 @@ document.getElementById("add-ctn-button").addEventListener("click", function () 
 </td>`;
     lists.appendChild(newlist);
     addChecked(lists.lastChild);
-    showDetails(lists.lastChild);
+    showDetails(lists.lastChild.children[0]);
 });
 
 // hide when checked
@@ -41,9 +43,9 @@ for (let i = 0; i < listCtn.length; i++) {
 }
 
 // show notes and date
-// for (let i = 0; i < listCtn.length; i++) {
-//     showDetails(listCtn[i]);
-// }
+for (let i = 0; i < listCtn.length; i++) {
+    showDetails(listCtn[i].children[0]);
+}
 
 // show done lists
 var show = false;
