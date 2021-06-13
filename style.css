@@ -11,26 +11,28 @@ input {
 }
 
 body {
+  height: 100vh;
   background-color: #48bbaf;
 }
 
 body header {
   font-size: 2em;
-  font-family: 'Vast Shadow', cursive;
+  font-family: "Vast Shadow", cursive;
   background: #1ca89c;
-  padding: 40px;
+  padding: 30px;
   margin: 0;
   color: #333;
   text-align: center;
 }
 
 body header .emphasis {
-  font-family: 'Vast Shadow', cursive;
-  font-size: 4em;
+  font-family: "Vast Shadow", cursive;
+  font-size: 3em;
 }
 
 body main {
-  height: 60vh;
+  max-height: 60vh;
+  overflow: auto;
 }
 
 body main #lists-ctn {
@@ -51,18 +53,35 @@ body main #lists-ctn table td {
   padding: 10px;
 }
 
+body main #lists-ctn table tr {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+body main #lists-ctn table .list-bar {
+  width: 100%;
+  padding: 10px 10px 10px 5px;
+}
+
 body main #lists-ctn table .list-bar input[type="text"] {
   background-color: transparent;
-  font-size: 1.5em;
+  font-size: 2em;
+  max-width: 90%;
+}
+
+body main #lists-ctn table .list-bar input[type="text"]:focus {
+  outline: none;
+  border: none;
 }
 
 body main #lists-ctn table .list-bar input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 body main #lists-ctn table .dropdown {
   margin-top: 10px;
+  margin-bottom: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,27 +92,42 @@ body main #lists-ctn table .dropdown {
 
 body main #lists-ctn table .dropdown input {
   background-color: transparent;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 body main #lists-ctn table .dropdown button {
   background: transparent;
   border: none;
-  font-size: 1em;
-  border: 1px solid black;
-  padding: 5px;
-  border-radius: 2px;
+  padding: 1px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 9px #48bbaf;
+          box-shadow: 0 9px #48bbaf;
+}
+
+body main #lists-ctn table .dropdown button:active {
+  -webkit-box-shadow: 0 5px #65d8cb;
+          box-shadow: 0 5px #65d8cb;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 body main #add-ctn {
-  max-width: 40%;
+  position: fixed;
+  bottom: 100px;
+  left: 30%;
+  width: 40%;
   margin: auto;
   padding-top: 20px;
 }
 
 body main #add-ctn form input {
   height: 55px;
-  margin: 10px 0;
   width: 70%;
   font-size: 1.5em;
   text-indent: 15px;
@@ -104,14 +138,17 @@ body main #add-ctn form button {
   height: 55px;
   font-size: 1.5em;
   border: none;
-  background: #29F4E3;
+  background: #29f4e3;
 }
 
 body #done {
-  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 30%;
+  width: 40%;
   text-align: center;
   height: 100px;
-  background-color: #13756D;
+  background-color: #13756d;
   border: none;
   font-size: 3em;
   color: #aaa;
@@ -119,5 +156,9 @@ body #done {
 
 .hide {
   display: none !important;
+}
+
+.done-true {
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=style.css.map */

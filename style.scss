@@ -10,22 +10,24 @@ input {
 }
 // specify
 body {
+  height: 100vh;
   background-color: rgb(72, 187, 175);
   header {
     font-size: 2em;
-    font-family: 'Vast Shadow', cursive;
+    font-family: "Vast Shadow", cursive;
     background: #1ca89c;
-    padding: 40px;
+    padding: 30px;
     margin: 0;
     color: #333;
     text-align: center;
     .emphasis {
-      font-family: 'Vast Shadow', cursive;
-      font-size: 4em;
+      font-family: "Vast Shadow", cursive;
+      font-size: 3em;
     }
   }
   main {
-    height: 60vh;
+    max-height: 60vh;
+    overflow: auto;
     #lists-ctn {
       max-width: 40%;
       margin: auto;
@@ -48,43 +50,65 @@ body {
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65d8cb', endColorstr='#72f4e9',GradientType=0 );
           padding: 10px;
         }
+        tr {
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
         .list-bar {
+          width: 100%;
+          padding: 10px 10px 10px 5px;
           input[type="text"] {
             background-color: transparent;
-            font-size: 1.5em;
+            font-size: 2em;
+            max-width: 90%;
+            &:focus {
+              outline: none;
+              border: none;
+            }
           }
           input[type="checkbox"] {
-            width: 15px;
-            height: 15px;
+            width: 20px;
+            height: 20px;
           }
         }
         .dropdown {
           margin-top: 10px;
+          margin-bottom: 5px;
           display: flex;
           justify-content: space-between;
           input {
             background-color: transparent;
-            font-size: 1.3em;
+            font-size: 1.5em;
           }
           button {
             background: transparent;
             border: none;
-            font-size: 1em;
-            border: 1px solid black;
-            padding: 5px;
-            border-radius: 2px;
+            padding: 1px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px rgb(72, 187, 175);
+            &:active {
+              box-shadow: 0 5px #65d8cb;
+              transform: translateY(4px);
+            }
           }
         }
       }
     }
     #add-ctn {
-      max-width: 40%;
+      position: fixed;
+      bottom: 100px;
+      left: 30%;
+      width: 40%;
       margin: auto;
       padding-top: 20px;
       form {
         input {
           height: 55px;
-          margin: 10px 0;
           width: 70%;
           font-size: 1.5em;
           text-indent: 15px;
@@ -94,21 +118,27 @@ body {
           height: 55px;
           font-size: 1.5em;
           border: none;
-          background: #29F4E3;
+          background: #29f4e3;
         }
       }
     }
   }
-    #done{
-      width: 100%;
-      text-align: center;
-      height: 100px;
-      background-color: #13756D;
-      border: none;
-      font-size: 3em;
-      color: #aaa;
-    }
+  #done {
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    width: 40%;
+    text-align: center;
+    height: 100px;
+    background-color: #13756d;
+    border: none;
+    font-size: 3em;
+    color: #aaa;
+  }
 }
 .hide {
-   display: none !important;
+  display: none !important;
+}
+.done-true {
+  text-decoration: line-through;
 }

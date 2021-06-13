@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <header>You've got <span class="emphasis">3</span> things to do</header>
+    <header>You've got <span class="emphasis">0</span> things to do</header>
     <main>
-        <section id="lists-ctn">
+        <div id="lists-ctn">
             <table class="lists">
-                <tr class="list-ctn">
+                <!-- <tr class="list-ctn">
                     <td>
                         <div class="list-bar">
-                            <input type="checkbox">
+                            <input class="checkbox" type="checkbox">
                             <input type="text" value="Vacuum the carpet">
                         </div>
                         <div class="dropdown hide">
@@ -30,7 +30,7 @@
                 <tr class="list-ctn">
                     <td>
                         <div class="list-bar">
-                            <input type="checkbox">
+                            <input class="checkbox" type="checkbox">
                             <input type="text" value="Sweep">
                         </div>
                         <div class="dropdown hide">
@@ -43,7 +43,7 @@
                 <tr class="list-ctn">
                     <td>
                         <div class="list-bar">
-                            <input type="checkbox">
+                            <input class="checkbox" type="checkbox">
                             <input type="text" value="Wash the dishes">
                         </div>
                         <div class="dropdown hide">
@@ -51,17 +51,17 @@
                             <button type="button">Delete</button>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
             </table>
-        </section>
-        <section id="add-ctn">
+        </div>
+        <div id="add-ctn">
             <form>
-                <input id="task" type="text" placeholder="I need to..."><button id="add-ctn-button"
+                <input id="task" type="text" placeholder="I need to..."><button id="add-btn"
                     type="button">Add</button>
             </form>
-        </section>
+        </div>
+    <button id="done" type="button">Done(<span>0</span>)</button>
     </main>
-        <button id="done" type="button">Done</button>
     <script src="script.js"></script>
 </body>
 

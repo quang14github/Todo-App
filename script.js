@@ -1,65 +1,91 @@
-const lists = document.querySelector(".lists");
-var listCtn = document.querySelectorAll(".list-ctn");
-const showDone = document.getElementById("done");
+var lists = document.querySelector(".lists");
+const addBtn = document.getElementById("add-btn");
+const remain = document.querySelector(".emphasis");
+const done = document.getElementById("done").children[0];
+var remainTasks = 0, doneTasks = 0;
+// render
+function render() {
+    remain.innerHTML = remainTasks;
+    done.innerHTML = doneTasks;
+}
+
 // checked function
-function addChecked(x) {
-    x.children[0].children[0].addEventListener("click", () => {
-        if (x.children[0].children[0].checked == true) {
-            x.classList.add("hide");
+function addChecked(checkBox, element) {
+    checkBox.addEventListener("click", () => {
+        let content = element.querySelector(".content");
+        if (checkBox.checked == true) {
+            remainTasks--;
+            doneTasks++;
+            content.classList.add("done-true");
+            setTimeout(() => {
+                lists.removeChild(element);
+                addNewList(content, false);
+            }, 400);
+        } else {
+            remainTasks++;
+            doneTasks--;
+            content.classList.remove("done-true");
         }
+        render();
     });
 }
 
-// show details function
-function showDetails(x) {
-    x.children[2].addEventListener("click", () => {
-        x.lastElementChild.classList.toggle("hide");
-    });
-}
-// Add list
-document.getElementById("add-ctn-button").addEventListener("click", function () {
-    const task = document.getElementById("task");
-    var newlist = document.createElement("TR");
-    newlist.classList.add("list-ctn");
-    newlist.innerHTML = `<td>
-    <input type="checkbox">
-    <input type="text" value="${task.value}">
-    <button type="button">
-    <img class="arrow" src="arrow-down.svg" alt="">
-</button>
+// add new list function 
+function addNewList(task, condition) {
+    if (task.value !== "") {
+        let newList = document.createElement("TR");
+        newList.classList.add("list-ctn");
+        newList.innerHTML = `<td>
+    <div class="list-bar">
+    <input class="checkbox" type="checkbox">
+        <input class="content" type="text" value="${task.value}">
+    </div>
     <div class="dropdown hide">
-        <textarea></textarea>
-        <input type="date"> 
+        <input type="date">
+        <button type="button">Delete</button>
     </div>
 </td>`;
-    lists.appendChild(newlist);
-    addChecked(lists.lastChild);
-    showDetails(lists.lastChild.children[0]);
+        // add checked
+        if (condition) {
+            remainTasks++;
+            render();
+        } else {
+            newList.classList.add("hide");
+        }
+        lists.appendChild(newList);
+        let checkBox = lists.lastElementChild.querySelector(".checkbox");
+        if(!condition) {
+            checkBox.checked = true;
+            lists.lastElementChild.querySelector(".content").classList.add("done-true");
+        }
+        addChecked(checkBox, lists.lastElementChild);
+    }
+}
+// Add event for add
+addBtn.addEventListener("click", () => {
+    const task = document.getElementById("task");
+    addNewList(task, true);
+    task.value = "";
 });
 
-// hide when checked
-for (let i = 0; i < listCtn.length; i++) {
-    addChecked(listCtn[i]);
-}
-
-// show notes and date
-for (let i = 0; i < listCtn.length; i++) {
-    showDetails(listCtn[i].children[0]);
-}
-
-// show done lists
-var show = false;
-showDone.addEventListener("click", () => {
-    listCtn = document.querySelectorAll(".list-ctn");
-    if (!show) {
-        listCtn.forEach(element => {
-            element.classList.remove("hide");
-        });
-        show = true;
+// show done 
+let show = false;
+document.getElementById("done").addEventListener("click", function() {
+    if(!show) {
+        this.style.fontWeight = "bold";
+        this.style.color = "black";
+        this.style.fontSize = "4em";
     } else {
-        listCtn.forEach(element => {
-            if (element.children[0].children[0].checked == true) element.classList.add("hide");
-        });
-        show = false;
+        this.style.fontWeight = "500";
+        this.style.color = "#aaa";
+        this.style.fontSize = "3em";
     }
+    let listCtn = lists.querySelectorAll(".list-ctn");
+    listCtn.forEach(element => {
+        if (element.querySelector(".checkbox").checked == true) {
+            if(!show) element.classList.remove("hide");
+            else element.classList.add("hide");
+        }
+    });
+    show = !show;
 });
