@@ -2,6 +2,7 @@ var lists = document.querySelector(".lists");
 const addBtn = document.getElementById("add-btn");
 const remain = document.querySelector(".emphasis");
 const done = document.getElementById("done").children[0];
+const today = new Date().toISOString().substr(0,10);
 var remainTasks = 0, doneTasks = 0;
 // render
 function render() {
@@ -13,13 +14,14 @@ function render() {
 function addChecked(checkBox, element) {
     checkBox.addEventListener("click", () => {
         let content = element.querySelector(".content");
+        let deadLine = element.querySelector("input[type='date']").value;
         if (checkBox.checked == true) {
             remainTasks--;
             doneTasks++;
             content.classList.add("done-true");
             setTimeout(() => {
                 lists.removeChild(element);
-                addNewList(content, false);
+                addNewList(content, deadLine, false);
             }, 400);
         } else {
             remainTasks++;
@@ -30,8 +32,27 @@ function addChecked(checkBox, element) {
     });
 }
 
+// show detail function 
+function addShowDetail(element) {
+    let listBar = element.querySelector(".list-bar");
+    let dropDown = element.querySelector(".dropdown");
+    listBar.addEventListener("click", () => {
+        dropDown.classList.toggle("hide");
+    })
+}
+
+// delete function
+function addDelete(element) {
+    let deleteItem = element.lastElementChild;
+    deleteItem.getElementsByTagName("button")[0].addEventListener("click", () => {
+        if(deleteItem.querySelector(".checkbox").checked == true) doneTasks--;
+        else remainTasks--;
+        render();
+        element.removeChild(deleteItem);
+    });
+}
 // add new list function 
-function addNewList(task, condition) {
+function addNewList(task, deadline, condition) {
     if (task.value !== "") {
         let newList = document.createElement("TR");
         newList.classList.add("list-ctn");
@@ -41,7 +62,7 @@ function addNewList(task, condition) {
         <input class="content" type="text" value="${task.value}">
     </div>
     <div class="dropdown hide">
-        <input type="date">
+        <input type="date" value="${deadline}">
         <button type="button">Delete</button>
     </div>
 </td>`;
@@ -59,26 +80,32 @@ function addNewList(task, condition) {
             lists.lastElementChild.querySelector(".content").classList.add("done-true");
         }
         addChecked(checkBox, lists.lastElementChild);
+        addShowDetail(lists.lastElementChild);
+        addDelete(lists);
     }
 }
-// Add event for add
+// Add new list
+document.getElementsByTagName("form")[0].addEventListener("submit", function(event) {
+   event.preventDefault();
+   const task = document.getElementById("task");
+   addNewList(task, today, true);
+   task.value = "";
+});
 addBtn.addEventListener("click", () => {
     const task = document.getElementById("task");
-    addNewList(task, true);
-    task.value = "";
+   addNewList(task, today, true);
+   task.value = "";
 });
 
 // show done 
 let show = false;
 document.getElementById("done").addEventListener("click", function() {
     if(!show) {
-        this.style.fontWeight = "bold";
-        this.style.color = "black";
-        this.style.fontSize = "4em";
+        this.style.boxShadow = "none";
+        this.style.transform = "translateY(4px) translateX(-4px)";
     } else {
-        this.style.fontWeight = "500";
-        this.style.color = "#aaa";
-        this.style.fontSize = "3em";
+        this.style.boxShadow = "-5px 9px rgb(21, 31, 30)";
+        this.style.transform = "translateY(-4px) translateX(4px)";
     }
     let listCtn = lists.querySelectorAll(".list-ctn");
     listCtn.forEach(element => {

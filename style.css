@@ -6,6 +6,19 @@
   font-family: monospace;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+main::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+main {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 input {
   border: none;
 }
@@ -31,14 +44,15 @@ body header .emphasis {
 }
 
 body main {
-  max-height: 60vh;
+  max-height: 58vh;
   overflow: auto;
+  max-width: 40%;
+  margin: 0 auto;
 }
 
 body main #lists-ctn {
-  max-width: 40%;
-  margin: auto;
-  margin-top: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 body main #lists-ctn table {
@@ -51,11 +65,6 @@ body main #lists-ctn table td {
   background: linear-gradient(#65d8cb 0%, #72f4e9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65d8cb', endColorstr='#72f4e9',GradientType=0 );
   padding: 10px;
-}
-
-body main #lists-ctn table tr {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 body main #lists-ctn table .list-bar {
@@ -119,7 +128,7 @@ body main #lists-ctn table .dropdown button:active {
 
 body main #add-ctn {
   position: fixed;
-  bottom: 100px;
+  bottom: 116px;
   left: 30%;
   width: 40%;
   margin: auto;
@@ -128,13 +137,13 @@ body main #add-ctn {
 
 body main #add-ctn form input {
   height: 55px;
-  width: 70%;
+  width: 75%;
   font-size: 1.5em;
   text-indent: 15px;
 }
 
 body main #add-ctn form button {
-  width: 30%;
+  width: 25%;
   height: 55px;
   font-size: 1.5em;
   border: none;
@@ -143,15 +152,19 @@ body main #add-ctn form button {
 
 body #done {
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
   left: 30%;
   width: 40%;
-  text-align: center;
   height: 100px;
+  text-align: center;
+  cursor: pointer;
   background-color: #13756d;
   border: none;
   font-size: 3em;
   color: #aaa;
+  border-radius: 15px;
+  -webkit-box-shadow: -5px 9px #151f1e;
+          box-shadow: -5px 9px #151f1e;
 }
 
 .hide {
