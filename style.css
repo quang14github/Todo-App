@@ -43,7 +43,7 @@ body header .emphasis {
   font-size: 3em;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   body header {
     font-size: 1em;
     padding: 15px;
@@ -93,7 +93,7 @@ body main #lists-ctn table .list-bar input[type="text"]:focus {
   border: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #lists-ctn table .list-bar input[type="text"] {
     font-size: 1em;
   }
@@ -104,14 +104,14 @@ body main #lists-ctn table .list-bar input[type="checkbox"] {
   height: 20px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #lists-ctn table .list-bar input[type="checkbox"] {
     width: 12px;
     height: 12px;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #lists-ctn table .list-bar {
     padding: 5px 5px 5px 2.5px;
   }
@@ -135,7 +135,7 @@ body main #lists-ctn table .dropdown input {
   font-size: 1.5em;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #lists-ctn table .dropdown input {
     font-size: 1em;
   }
@@ -163,13 +163,13 @@ body main #lists-ctn table .dropdown button:active {
           transform: translateY(4px);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #lists-ctn table .dropdown button {
     font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #lists-ctn table .dropdown {
     margin-top: 5px;
   }
@@ -191,7 +191,7 @@ body main #add-ctn form input {
   text-indent: 15px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   body main #add-ctn form input {
     font-size: 1em;
     height: 40px;
@@ -212,14 +212,14 @@ body main #add-ctn form button {
   background: #29f4e3;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   body main #add-ctn form button {
     font-size: 1em;
     height: 40px;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   body main #add-ctn {
     left: 5%;
     width: 90%;
@@ -244,7 +244,7 @@ body main #done {
           box-shadow: -5px 9px #151f1e;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   body main #done {
     left: 5%;
     width: 90%;
@@ -253,7 +253,7 @@ body main #done {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   body main {
     max-width: 90%;
   }

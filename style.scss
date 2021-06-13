@@ -34,7 +34,7 @@ body {
       font-family: "Vast Shadow", cursive;
       font-size: 3em;
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 768px) {
       font-size: 1em;
       padding: 15px;
       .emphasis {
@@ -79,19 +79,19 @@ body {
               outline: none;
               border: none;
             }
-            @media only screen and (max-width: 700px) {
+            @media only screen and (max-width: 768px) {
               font-size: 1em;
             }
           }
           input[type="checkbox"] {
             width: 20px;
             height: 20px;
-            @media only screen and (max-width: 700px) {
+            @media only screen and (max-width: 768px) {
               width: 12px;
               height: 12px;
             }
           }
-          @media only screen and (max-width: 700px) {
+          @media only screen and (max-width: 768px) {
             padding: 5px 5px 5px 2.5px;
           }
         }
@@ -104,7 +104,7 @@ body {
           input {
             background-color: transparent;
             font-size: 1.5em;
-            @media only screen and (max-width: 700px) {
+            @media only screen and (max-width: 768px) {
               font-size: 1em;
             }
           }
@@ -124,11 +124,11 @@ body {
               box-shadow: 0 5px #65d8cb;
               transform: translateY(4px);
             }
-            @media only screen and (max-width: 700px) {
+            @media only screen and (max-width: 768px) {
               font-size: 1em;
             }
           }
-          @media only screen and (max-width: 700px) {
+          @media only screen and (max-width: 768px) {
             margin-top: 5px;
           }
         }
@@ -147,7 +147,7 @@ body {
           width: 60%;
           font-size: 1.5em;
           text-indent: 15px;
-          @media only screen and (max-width: 700px) {
+          @media only screen and (max-width: 768px) {
             font-size: 1em;
             height: 40px;
           }
@@ -163,13 +163,13 @@ body {
           font-size: 1.5em;
           border: none;
           background: #29f4e3;
-          @media screen and (max-width: 700px) {
+          @media screen and (max-width: 768px) {
             font-size: 1em;
             height: 40px;
           }
         }
       }
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 768px) {
         left: 5%;
         width: 90%;
         bottom: 65px;
@@ -189,14 +189,14 @@ body {
       color: #aaa;
       border-radius: 15px;
       box-shadow: -5px 9px rgb(21, 31, 30);
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 768px) {
         left: 5%;
         width: 90%;
         font-size: 1.5em;
         height: 50px;
       }
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 768px) {
       max-width: 90%;
     }
   }
