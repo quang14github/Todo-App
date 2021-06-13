@@ -85,10 +85,12 @@ function addNewList(task, deadline, condition) {
     }
 }
 // Add new list
+const initDate = document.getElementById("initdate");
+initDate.min = today;
 document.getElementsByTagName("form")[0].addEventListener("submit", function(event) {
    event.preventDefault();
    const task = document.getElementById("task");
-   addNewList(task, today, true);
+   addNewList(task, initDate.value, true);
    task.value = "";
 });
 addBtn.addEventListener("click", () => {
