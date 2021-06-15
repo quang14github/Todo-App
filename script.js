@@ -21,7 +21,7 @@ function addChecked(checkBox, element) {
             content.classList.add("done-true");
             setTimeout(() => {
                 lists.removeChild(element);
-                addNewList(content, deadLine, false);
+                addHideList(content, deadLine);
             }, 400);
         } else {
             remainTasks++;
@@ -52,7 +52,7 @@ function addDelete(element) {
     });
 }
 // add new list function 
-function addNewList(task, deadline, condition) {
+function addNewList(task, deadLine) {
     if (task.value !== "") {
         let newList = document.createElement("TR");
         newList.classList.add("list-ctn");
@@ -62,23 +62,41 @@ function addNewList(task, deadline, condition) {
         <input class="content" type="text" value="${task.value}">
     </div>
     <div class="dropdown hide">
-        <input type="date" value="${deadline}">
+        <input type="date" value="${deadLine}">
         <button type="button">Delete</button>
     </div>
 </td>`;
         // add checked
-        if (condition) {
-            remainTasks++;
-            render();
-        } else {
-            newList.classList.add("hide");
-        }
+        remainTasks++;
+        render();
         lists.appendChild(newList);
         let checkBox = lists.lastElementChild.querySelector(".checkbox");
-        if(!condition) {
-            checkBox.checked = true;
-            lists.lastElementChild.querySelector(".content").classList.add("done-true");
-        }
+        addChecked(checkBox, lists.lastElementChild);
+        addShowDetail(lists.lastElementChild);
+        addDelete(lists);
+    }
+}
+// Add hide list function 
+function addHideList(task, deadLine) {
+    if (task.value !== "") {
+        let newList = document.createElement("TR");
+        newList.classList.add("list-ctn");
+        newList.innerHTML = `<td>
+    <div class="list-bar">
+    <input class="checkbox" type="checkbox">
+        <input class="content" type="text" value="${task.value}">
+    </div>
+    <div class="dropdown hide">
+        <input type="date" value="${deadLine}">
+        <button type="button">Delete</button>
+    </div>
+</td>`;
+        // add checked
+        newList.classList.add("hide");
+        lists.appendChild(newList);
+        let checkBox = lists.lastElementChild.querySelector(".checkbox");
+        checkBox.checked = true;
+        lists.lastElementChild.querySelector(".content").classList.add("done-true");
         addChecked(checkBox, lists.lastElementChild);
         addShowDetail(lists.lastElementChild);
         addDelete(lists);
@@ -90,12 +108,12 @@ initDate.min = today;
 document.getElementsByTagName("form")[0].addEventListener("submit", function(event) {
    event.preventDefault();
    const task = document.getElementById("task");
-   addNewList(task, initDate.value, true);
+   addNewList(task, initDate.value);
    task.value = "";
 });
 addBtn.addEventListener("click", () => {
     const task = document.getElementById("task");
-    addNewList(task, initDate.value, true);
+    addNewList(task, initDate.value);
    task.value = "";
 });
 
